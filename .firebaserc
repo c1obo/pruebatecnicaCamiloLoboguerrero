@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fukl-48022-g51-2021-2-test1": {
+      "hosting": {
+        "argon-dashboard-angular": [
+          "fukl-48022-g51-2021-2-test1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fukl-48022-g51-2021-2-test1"
+  }
+}

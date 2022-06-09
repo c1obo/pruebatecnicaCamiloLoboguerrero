@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsuariosService } from 'src/app/project/services/usuarios.service';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
-  selector: 'app-tables',
-  templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.scss']
+  selector: 'app-tabla',
+  templateUrl: './tabla.component.html',
+  styleUrls: ['./tabla.component.scss']
 })
-export class TablesComponent implements OnInit {
-
+export class TablaComponent implements OnInit {
   users: any[] = [];
 
   constructor(private usuariosService: UsuariosService,private actRoute: ActivatedRoute ) { }
@@ -26,12 +25,12 @@ export class TablesComponent implements OnInit {
           ...element.payload.doc.data()
         })
       });
-      console.log(this.users + "los propietarios");
+      console.log(this.users + "los usuarios");
 
     });
   }
   eliminarPropietario(id: string) {
-    console.log("estoy eliminando el propietario -->" + id);
+    console.log("estoy eliminando el usuario -->" + id);
     this.usuariosService.eliminarUsuario(id).then(() => {
       console.log("empleado eliminado con exito");
 

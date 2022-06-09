@@ -10,7 +10,10 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "architect": {
@@ -128,6 +131,16 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "argon-dashboard-angular:build:production",
+            "firebaseProject": "fukl-48022-g51-2021-2-test1",
+            "firebaseHostingSite": "fukl-48022-g51-2021-2-test1"
+          }
         }
       }
     },
@@ -160,11 +173,6 @@
     }
   },
   "defaultProject": "argon-dashboard-angular",
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
-    }
-  },
   "cli": {
     "analytics": false
   }
